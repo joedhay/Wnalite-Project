@@ -1,0 +1,27 @@
+
+
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="login-form">
+        <h2>Login</h2>
+        <%= form_for(:user,url:{action:'check_user'}) do |f| %>
+          <fieldset>
+            <div class="clearfix">
+              <!--<input type="text" placeholder="Username">!-->
+              <%= f.label :username %><br>
+              <%= f.text_field(:username) %>
+            </div>
+            <div class="clearfix">
+              <!--<input type="password" placeholder="Password">!-->
+              <%= f.label :password %><br>
+              <%= f.password_field :password %>
+            </div>
+            <!--<button class="btn primary" type="submit">Sign in</button>-->
+            <%= f.submit %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

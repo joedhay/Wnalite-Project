@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#require 'digest/md5'
+
+User.create(username_string:'admin',password:Digest::MD5.hexdigest('admin'))

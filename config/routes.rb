@@ -60,6 +60,8 @@ Winalite::Application.routes.draw do
   resources :users do
     collection do
       get   'login'
+      post  'check_user'
+      get   'show_index'
     end
   end
 

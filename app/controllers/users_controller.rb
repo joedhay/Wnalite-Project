@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  require 'digest/md5'
   # GET /users
   # GET /users.json
   def index
@@ -73,8 +73,25 @@ class UsersController < ApplicationController
 
     end
 
+    def check_user
+      @username = params[:user][:username]
+      @password = Digest::MD5.hexdigest("#{params[:user][:password]}")
+
+      @user = User.where(username: @username).take
+      @password_db = User.where(password: @password).take
+
+      if @user.username == @username && @password_db.password == @password
+        redirect_to  :action=> :show_index
+      end
+
+    end
+
+    def show_index
+        logger.info "BOOM"
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :username_string)
+      params.require(:user).permit(:name, :email, :password, :username)
     end
 end
