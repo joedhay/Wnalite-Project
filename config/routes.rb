@@ -1,5 +1,5 @@
 Winalite::Application.routes.draw do
-  resources :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -55,4 +55,12 @@ Winalite::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'users#login'
+  resources :users do
+    collection do
+      get   'login'
+    end
+  end
+
 end
