@@ -70,13 +70,13 @@ class UsersController < ApplicationController
 =end
 
     def login
-
+      render :layout => 'login_user'
     end
 
     def check_user
       @username = params[:user][:username]
       @password = Digest::MD5.hexdigest("#{params[:user][:password]}")
-
+      session[:user_logged_in] = params[:user][:username]
       @user = User.where(username: @username).take
       @password_db = User.where(password: @password).take
 
@@ -87,7 +87,8 @@ class UsersController < ApplicationController
     end
 
     def show_index
-        logger.info "BOOM"
+      #@user_logged_in[:username] =
+      logger.info "USER #{session[:user_logged_in]}"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

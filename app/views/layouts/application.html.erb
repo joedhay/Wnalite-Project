@@ -1,14 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Winalite</title>
+  <title>Sample</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">SAMPLE</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li class="active"><a href="#">Home</a></li>
+          <li class="divider-vertical"></li>
+          <li><a href="#">About</a></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">First Item</a></li>
+              <li><a href="#">Second Item</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Third Item</a></li>
+            </ul>
+          </li>
+          <li class="divider-vertical"></li>
+          <li><a href="#">Contact</a></li>
+          <li class="divider-vertical"></li>
+        </ul>
+        <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="Search...">
+          <%= session[:user_logged_in] %>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
+<br/>
+<div class="span3">
+  <div class="well">
+    <div>
+      <ul class="nav nav-list">
+        <li><label class="tree-toggle nav-header">Bootstrap</label>
+          <ul class="nav nav-list tree">
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><label class="tree-toggle nav-header">Buttons</label>
+              <ul class="nav nav-list tree">
+                <li><a href="#">Colors</a></li>
+                <li><a href="#">Sizes</a></li>
+                <li><label class="tree-toggle nav-header">Forms</label>
+                  <ul class="nav nav-list tree">
+                    <li><a href="#">Horizontal</a></li>
+                    <li><a href="#">Vertical</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li><label class="tree-toggle nav-header">Responsive</label>
+          <ul class="nav nav-list tree">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><label class="tree-toggle nav-header">Media Queries</label>
+              <ul class="nav nav-list tree">
+                <li><a href="#">Text</a></li>
+                <li><a href="#">Images</a></li>
+                <li><label class="tree-toggle nav-header">Mobile Devices</label>
+                  <ul class="nav nav-list tree">
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Samsung</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><label class="tree-toggle nav-header">Coding</label>
+              <ul class="nav nav-list tree">
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><label class="tree-toggle nav-header">HTML DOM</label>
+                  <ul class="nav nav-list tree">
+                    <li><a href="#">DOM Elements</a></li>
+                    <li><a href="#">Recursive</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
+
+<div class="span9 hero-unit">
+  <div class="container">
+    <h1>Learn Rails-Bootstrap</h1>
+    <%= yield %>
+    <%#=  yield %>
+  </div>
+</div>
 </body>
 </html>

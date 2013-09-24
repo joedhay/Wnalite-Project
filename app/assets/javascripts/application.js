@@ -15,3 +15,10 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $('.tree-toggle').click(function () {
+        $(this).parent().children('ul.tree').toggle(200);
+
+    });
+});

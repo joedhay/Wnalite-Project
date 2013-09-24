@@ -7,4 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #require 'digest/md5'
 
-User.create(username_string:'admin',password:Digest::MD5.hexdigest('admin'))
+#User.create(username:'admin',password:Digest::MD5.hexdigest('admin'))
+['admin','joener'].each do |a|
+  User.create(username:a,password:Digest::MD5.hexdigest('admin'))
+end
